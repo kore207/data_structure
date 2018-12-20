@@ -51,15 +51,44 @@ void add()
 
 void find()
 {
+	char buf[BUFFER_SIZE];
+	scanf("%s", buf);
 
+	int i;
+	for (i = 0; i < n; i++)
+	{
+		if (strcmp(buf, names[i]) == 0)
+		{
+			printf("%s\n", numbers[i]);
+			return;
+		}
+	}
+	printf("No person named '%s' exists");
 }
 
 void status()
 {
-
+	int i;
+	for (i = 0; i < n; i++)
+		printf("%s   %s\n", names[i], numbers[i]);
+	printf("Total %d persons.\n", n);
 }
 
 void remove()
 {
-
+	char buf[BUFFER_SIZE];
+	scanf("%s", buf);
+	int i;
+	for (i = 0; i < n; i++)
+	{
+		if (strcmp(buf, names[i]) == 0)
+		{
+			names[i] = names[n - 1];
+			numbers[i] = numbers[n - 1];
+			n--;
+			printf("'%s' remove successfully. \n", buf);
+			return;
+		}
+	}
+	printf("No person named '%s' exists.\n", buf);
 }

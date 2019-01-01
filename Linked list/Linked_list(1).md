@@ -26,7 +26,7 @@
 
 + 메모리에 연속된 공간에 저장된 배열과 달리 순서대로 저장할 필요가 없다.
 
-+ 다만 첫번째 데이터에 두번째 데이터의 주소를 함께 저장한다.![Alt text](C:\Users\K\Documents\data_structure\Linked list\linked_list_1.jpg)
++ 다만 첫번째 데이터에 두번째 데이터의 주소를 함께 저장한다.![Alt text](https://github.com/kore207/data_structure/blob/master/Linked%20list/linked_list_1.JPG)
 
   -각 연결되는 부분을 노드라고한다. ( 첫번째 노드는 따로 저장해야한다.)
 

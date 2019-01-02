@@ -107,4 +107,67 @@ Node *add_first(Node *head, char * item)
       }
       return NULL;
   }
+  
+  Node *get_node(int index){// 연결리스트의 index번째 노드의 주소를 반환
+      if(index < 0) //index 칸 이동한뒤 반환한다. 
+          return NULL;
+      Node *p = head;
+      for(int i=0; i<index && p!=NULL; i++)
+          p = p->next;
+      return p;
+  }
+  
+  int add(int index, char *item){//연결리스트의 index번째 위치에 새로운 노드를 만들어서 삽입
+      if(index<0)
+          return 0;
+             
+      if(index == 0){
+          add_first(item);
+          return 1;
+      }             
+      
+      Node *prev = get_node(index-1);
+      if(prev != NULL){
+          add_after(prev, item);
+          return 1;
+      }
+      return 0;
+  }
+  
+  Node *remove(int index){//index번째 노드를 삭제하고 , 그 노드에 저장된 데이터를 반환
+      if(index < 0)
+          return NULL;
+      
+      if(index==0)
+          return remove_first();
+      
+      Node *prev = get_node(index-1);
+      if(prev==NULL)
+          return NULL;
+      else
+          return remove_after(prev);
+  }
+  
+  Node *remove(char *item){//입력된 데이터를 저장한 노드를 찾아 삭제
+      Node *p = head;
+      while(p!=NULL && strcmp(p->data, item)!=0)
+          p=p->next;
+      //while문은 빠져나오지만 그 앞의 주소를 알아야한다.
+      //연결리스트를 사용할때의 전형적인 상황
+  }
+  
+  Node *remove(char *item){
+      Node *p = head;
+      Node *q = NULL;
+      while(p!=NULL && strcmp(p->data, item)!=0){
+          q = p; //q는 항상 p보다 한칸 앞을 가리킨다.
+          p=p->next;
+      }
+      if(p==NULL)
+          return NULL;
+      if(q==NULL)
+          return remove_first();
+      else
+          return remove_afrer(q);
+  }
   ```

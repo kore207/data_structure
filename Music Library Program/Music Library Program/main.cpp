@@ -22,7 +22,7 @@ void process_command();
 
 int main(int argc, const char * argv[]) {
     
-    
+    initialize();
     process_command();
     return 0;
 }

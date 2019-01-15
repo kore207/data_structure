@@ -9,8 +9,32 @@
 #ifndef library_hpp
 #define library_hpp
 
-#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+typedef struct song Song;
+typedef struct snode SNode;
+typedef struct artist Artist;//c컴파일러를 위한 타입 정의
+
+struct song{
+    Artist *artist;
+    char *title;
+    char *path;
+    int index;//노래의 고유 번호
+};
+
+struct snode{
+    struct snode *next,*prev;
+    Song *song;
+};
+
+struct artist{
+    char *name;
+    struct artist *next;
+    struct snode *head, *tail;
+};
+
+void initialize();
 void add_song(char *artist, char *title, char *path);
 void find_song();
 

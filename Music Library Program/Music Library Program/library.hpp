@@ -11,6 +11,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 typedef struct song Song;
 typedef struct snode SNode;
@@ -37,5 +38,7 @@ struct artist{
 void initialize();
 void add_song(char *artist, char *title, char *path);
 void find_song();
+void insert_node(Artist *ptr_artist, SNode *ptr_snode);
+void status();
 
 #endif /* library_hpp */

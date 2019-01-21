@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
 using namespace std;
 
 #define BUFFER_LENGTH 200
@@ -44,8 +45,8 @@ void process_command()
 //            handle_search();
 //        else if(strcmp(command, "remove")==0)
 //            handle_remove();
-//        else if(strcmp(command, "status")==0)
-//            handle_status();
+        else if(strcmp(command, "status")==0)
+            status();
 //        else if(strcmp(command, "play")==0)
 //            handle_play();
 //        else if(strcmp(command, "save")==0)
@@ -76,3 +77,5 @@ void handle_add()
     
     add_song(artist, title, path);
 }
+
+

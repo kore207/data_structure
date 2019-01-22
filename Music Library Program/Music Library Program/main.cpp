@@ -20,12 +20,34 @@ using namespace std;
 
 void handle_add();
 void process_command();
+void handle_load();
+void handle_search();
+void handle_play();
 
 int main(int argc, const char * argv[]) {
     
     initialize();
+    handle_load();
     process_command();
     return 0;
+}
+
+void handle_load()
+{
+    char buffer[BUFFER_LENGTH];
+    
+    printf("Data file name ? ");
+    if(read_line(stdin, buffer, BUFFER_LENGTH) <= 0)
+        return;
+    
+    FILE *fp = fopen(buffer, "r");
+    if(fp == NULL){
+        printf("No such file exist. \n");
+        return;
+    }
+    
+    load(fp);
+    fclose(fp);
 }
 
 void process_command()
@@ -41,14 +63,14 @@ void process_command()
         command =strtok(command_line, " ");
         if(strcmp(command, "add")==0)
             handle_add();
-//        else if(strcmp(command, "search
-//            handle_search();
+        else if(strcmp(command, "search") == 0)
+            handle_search();
 //        else if(strcmp(command, "remove")==0)
 //            handle_remove();
         else if(strcmp(command, "status")==0)
             status();
-//        else if(strcmp(command, "play")==0)
-//            handle_play();
+        else if(strcmp(command, "play")==0)
+            handle_play();
 //        else if(strcmp(command, "save")==0)
 //            handle_save();
         else if(strcmp(command, "exit")==0)
@@ -56,6 +78,32 @@ void process_command()
     }
 }
 
+void handle_play()
+{
+    char *id_str = strtok(NULL, " ");
+    int index = atoi(id_str);
+    play(index);
+}
+
+void handle_search()
+{
+    char name[BUFFER_LENGTH], title[BUFFER_LENGTH];
+    
+    printf("    Artist: ");
+    if(read_line(stdin, name, BUFFER_LENGTH) <= 0){
+        printf("   Artist name required.\n");
+        return;
+    }
+    printf("    Title: ");
+    int title_len = read_line(stdin, title, BUFFER_LENGTH);
+    
+    if(title_len <= 0)
+        search_song(name);
+    else
+        search_song(name, title);    
+    
+}
+                       
 void handle_add()
 {
     char buffer[BUFFER_LENGTH];

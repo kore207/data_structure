@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include "string_tools.hpp"
 
 typedef struct song Song;
 typedef struct snode SNode;
@@ -40,5 +41,12 @@ void add_song(char *artist, char *title, char *path);
 void find_song();
 void insert_node(Artist *ptr_artist, SNode *ptr_snode);
 void status();
-
+void load(FILE *fp);
+void search_song(char *artist, char *title);
+void search_song(char *artist);
+void print_song(Song *ptr_song);
+void print_artist(Artist *p);
+void insert_to_index_directoy(Song *ptr_song);
+SNode *find_snode(Artist *ptr_artist, char *title);
+void play(int index);
 #endif /* library_hpp */

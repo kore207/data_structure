@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "phone_book3", "phone_book3.vcxproj", "{3DBD3E20-348E-4D51-89DB-C351FD9E0702}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DBD3E20-348E-4D51-89DB-C351FD9E0702}.Debug|x64.ActiveCfg = Debug|x64
+		{3DBD3E20-348E-4D51-89DB-C351FD9E0702}.Debug|x64.Build.0 = Debug|x64
+		{3DBD3E20-348E-4D51-89DB-C351FD9E0702}.Debug|x86.ActiveCfg = Debug|Win32
+		{3DBD3E20-348E-4D51-89DB-C351FD9E0702}.Debug|x86.Build.0 = Debug|Win32
+		{3DBD3E20-348E-4D51-89DB-C351FD9E0702}.Release|x64.ActiveCfg = Release|x64
+		{3DBD3E20-348E-4D51-89DB-C351FD9E0702}.Release|x64.Build.0 = Release|x64
+		{3DBD3E20-348E-4D51-89DB-C351FD9E0702}.Release|x86.ActiveCfg = Release|Win32
+		{3DBD3E20-348E-4D51-89DB-C351FD9E0702}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39591F40-0110-4ADE-84A3-B04B55252072}
+	EndGlobalSection
+EndGlobal

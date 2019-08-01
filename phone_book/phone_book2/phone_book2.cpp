@@ -101,15 +101,10 @@ void add()
 	scanf("%s", buf1);
 	scanf("%s", buf2);
 
-	//names[n] = strdup(buf1); //strdup ->buf1의 크기에 맞게 다시 할당을 해서 복제한다 , buf1은 지역변수이기 때문에 직접 names에 넣을수 없다.(사라져 버림)
-	//numbers[n] = strdup(buf2);
-	//n++;
-
-	//printf("%s was added sucssesfuly\n", buf1);
 	int i = n - 1;
-	while (i >= 0 && strcmp(names[i], buf1) > 0) {
+	while (i >= 0 && strcmp(names[i], buf1) > 0) { //사전식 순서로 큰 항목은 뒤로 한칸식 이동 시킴
 		names[i + 1] = names[i];
-		numbers[i + 1] = numbers[i];
+		numbers[i + 1] = numbers[i]; 
 		i--;
 	}
 	names[i + 1] = strdup(buf1);
